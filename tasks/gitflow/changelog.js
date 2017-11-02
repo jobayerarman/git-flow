@@ -7,7 +7,7 @@ var changelog = require('gulp-conventional-changelog');
 var config    = require('../config').options;
 var helper    = require('../util');
 
-function changelog() {
+function changeLog() {
   var file = path.resolve(config.appDir, config.changelogFile);
 
   if (!fs.existsSync(file)) {
@@ -31,4 +31,4 @@ function changelog() {
     .pipe(gulp.dest(config.appDir));
 };
 
-gulp.task('changelog', changelog);
+gulp.task('changelog', changeLog);

@@ -1,6 +1,6 @@
 {
   "name": "gulp-gitflow",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Enable git-flow style releases via gulp",
   "author": "jobayer arman <jobayer.arman@gmail.com> (http://jobayerarman.github.io/)",
   "license": "MIT",

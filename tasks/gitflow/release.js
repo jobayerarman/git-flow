@@ -9,38 +9,38 @@ var tagVer = require('gulp-tag-version');
 var config = require('../config').options;
 var $      = require('../util.js');
 
-function start(done) {
+var start = function(done) {
   let version = $.packageVersion();
   shell.task(`git flow release start -F ${version}`, {
     verbose: true
   })(done);
 };
 
-function commit(message) {
+var commit = function(message) {
   return gulp.src(config.versionFiles)
-    .pipe(git.commit('chore(release): bump package version and update changelog', { emitData: true }))
+    .pipe(git.commit('build(release): bump package version and update changelog', { emitData: true }))
     .on('data', function(data) {
       console.log(data);
     });
 };
 
-function tag() {
+var tag = function() {
   return gulp.src(config.versionFiles)
     .pipe(tagVer());
 };
 
-function push(done) {
+var push = function(done) {
   git.push('origin', ['develop', 'master'], {
     args: '--tags',
     quiet: true
   }, done);
 };
 
-function finish(done) {
+var finish = function(done) {
   shell.task('git flow release finish', {
     verbose: true
   })(done);
 };
 
-gulp.task('release:start', gulp.series('bump', start, 'changelog', commit));
+gulp.task('release:start', gulp.series('bump', 'changelog', commit));
 gulp.task('release:finish', gulp.series(finish, tag, push));
