@@ -1,8 +1,29 @@
 {
-  "name": "gitflow",
+  "name": "gulp-gitflow",
   "version": "0.1.1",
-  "description": "gitflow practice",
-  "main": "index.html",
+  "description": "Enable git-flow style releases via gulp",
   "author": "jobayer arman <jobayer.arman@gmail.com> (http://jobayerarman.github.io/)",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {},
+  "devDependencies": {
+    "conventional-changelog": "^1.1.0",
+    "conventional-recommended-bump": "^1.0.2",
+    "fs-sync": "^1.0.4",
+    "gulp": "gulpjs/gulp.git#4.0",
+    "gulp-bump": "^2.8.0",
+    "gulp-conventional-changelog": "^1.1.0",
+    "gulp-git": "^2.4.2",
+    "gulp-help": "^1.6.1",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-shell": "^0.6.3",
+    "gulp-tag-version": "^1.3.0",
+    "gulp-util": "^3.0.7",
+    "lodash": "^4.17.4",
+    "path": "^0.12.7",
+    "require-dir": "^0.3.2",
+    "semver": "^5.4.1",
+    "yargs": "^10.0.3"
+  }
 }
