@@ -1,13 +1,11 @@
 'use strict';
 
-var gulp = require('gulp');
-var gitflow = require('./tasks/gitflow');
-
-// Simple tasks
-gulp.task('init', gitflow.init);
+var gulp       = require('gulp');
+var requireDir = require('require-dir');
+requireDir('./tasks', { recurse: true });
 
 function defaultTask(done) {
-  console.log('Gulp task running...');
+  console.log('Gulp task running...\n');
   done();
 }
 
