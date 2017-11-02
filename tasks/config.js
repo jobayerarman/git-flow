@@ -3,9 +3,18 @@
 var path = require('path');
 var $    = module.exports;
 
-$.config = {
+$.options = {
   preset: 'angular',
-  appDir: path.dirname(require.main.filename),
-  packageJSON: 'package.json',
-  changelogMD: 'CHANGELOG.md'
+  appDir: path.dirname(__dirname + '/'),
+  versionFiles: 'package.json',
+  changelogFile: 'CHANGELOG.md',
+  origin: 'origin',
+  masterBranch: 'master',
+  developBranch: 'develop',
+  featureBranch: 'feature/',
+  releaseBranch: 'release/',
+  bugfixBranch: 'bugfix/',
+  hotfixBranch: 'hotfix/',
+  tagPrefix: 'v',
+  push: false
 };
